@@ -1,0 +1,223 @@
+{
+  "seo": {
+    "title": "Ruan Moraes | Full-Stack Developer",
+    "description": "Ruan Moraes Portfolio - Full-Stack Developer specialized in React, TypeScript, Java and Spring Boot.",
+    "keywords": "developer, full-stack, react, typescript, java, spring boot, portfolio, ruan moraes"
+  },
+  "common": {
+    "portfolio": "Portfolio",
+    "downloadCV": "Download CV",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "requestService": "Request Service",
+    "learnMore": "Learn more",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try again",
+    "retry": "Try again",
+    "allRightsReserved": "All rights reserved",
+    "language": "Language",
+    "theme": "Theme",
+    "color": "Color",
+    "settings": "Settings",
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "close": "Close",
+    "stars": "Stars"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "home": "Home",
+    "about": "About",
+    "career": "Career",
+    "history": "History",
+    "professional": "Professional",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Ruan Moraes",
+    "role": "Software Developer",
+    "description": {
+      "prefix": "Trainee Developer at",
+      "company": "CAPYS",
+      "middle": ", with experience in",
+      "backend": "backend",
+      "and": "and",
+      "frontend": "frontend",
+      "suffix": ". Focused on delivering quality solutions."
+    },
+    "descriptionSimple": "Trainee Developer at CAPYS, with experience in backend and frontend. Focused on delivering quality solutions.",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "titlePrefix": "About",
+    "titleHighlight": "Me",
+    "subtitle": "Software Developer with backend and frontend experience",
+    "profile": {
+      "title": "Professional Profile",
+      "description": "Software Developer with over 2 years of experience and studies in the technology field. Solid performance in backend and frontend development, including bug fixes, implementation of new features, SQL query optimization, and technical support for teams. I have a solid foundation in software architecture best practices, clean code, and pattern-driven development."
+    },
+    "journey": {
+      "title": "My Journey",
+      "paragraph1": "My journey with technology started early, at age 8, with the curiosity to understand how computers worked. At 12, I had my first contact with programming through Python. Influenced by friends, I also became interested in hardware, which naturally led me to deepen my interest in the world of technology even further.",
+      "paragraph2": "After building my own computer and diving deep into hardware, I decided to pursue a career in development. Today, I work as a Trainee Developer at CAPYS, where I apply my knowledge in Java, Spring Boot, React, and databases to deliver quality solutions."
+    },
+    "tech": {
+      "title": "Technologies & Skills",
+      "languages": "Languages",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Databases",
+      "devops": "DevOps & Tools",
+      "architecture": "Architecture"
+    }
+  },
+  "career": {
+    "title": "Career Path",
+    "titlePrefix": "Career",
+    "titleHighlight": "Path",
+    "subtitle": "The main milestones of my professional journey",
+    "timeline": {
+      "firstContact": {
+        "title": "First Contact with Technology",
+        "description": "At age 8, I started exploring computers watching Minecraft videos, sparking my curiosity about the digital world."
+      },
+      "programming": {
+        "title": "Started Programming",
+        "description": "At 12, I had my first contact with Python through Gustavo Guanabara's course. My interest in hardware also grew."
+      },
+      "ownComputer": {
+        "title": "Built My Own PC",
+        "description": "I built my first computer with a Xeon E5-2650v2 and GTX 1660TI, consolidating my hardware knowledge."
+      },
+      "university": {
+        "title": "Started University",
+        "description": "Began my Bachelor's degree in Software Engineering at Uninter, formalizing my career in technology."
+      },
+      "firstJob": {
+        "title": "Trainee Developer @ CAPYS",
+        "description": "My first professional opportunity, working with Java, Spring Boot, React and databases in a real development environment."
+      },
+      "future": {
+        "title": "Next Steps",
+        "description": "Continue evolving as a developer, contribute to challenging projects and explore new technologies."
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "titlePrefix": "My",
+    "titleHighlight": "Projects",
+    "subtitle": "Some of the projects I've developed",
+    "project": "Project",
+    "projectDescription": "Brief project description here...",
+    "totalProjects": "{{count}} projects",
+    "noProjects": "No projects found",
+    "noDescription": "No description available",
+    "empty": "No projects found. Check your connection or try again later.",
+    "loadingProjects": "Loading projects...",
+    "errorLoading": "Error loading projects",
+    "viewAll": "View all projects",
+    "technologies": "Technologies",
+    "page": "Page {{current}} of {{total}}",
+    "items": {
+      "project1": {
+        "title": "Personal Portfolio",
+        "description": "Responsive portfolio website with multi-language support and customizable themes."
+      },
+      "project2": {
+        "title": "Management API",
+        "description": "RESTful API for user management and JWT authentication."
+      },
+      "project3": {
+        "title": "Mobile App",
+        "description": "Mobile application for task management and personal productivity."
+      }
+    }
+  },
+  "services": {
+    "title": "Services",
+    "titlePrefix": "My",
+    "titleHighlight": "Services",
+    "subtitle": "What I can do for you",
+    "webDev": {
+      "title": "Web and Mobile Development",
+      "description": "Creation of responsive websites, landing pages, web systems and mobile apps with modern technologies."
+    },
+    "api": {
+      "title": "RESTful API Development",
+      "description": "Development of robust and scalable APIs for system and application integration."
+    },
+    "database": {
+      "title": "Database Management",
+      "description": "Development, maintenance and optimization of relational (SQL) and non-relational (NoSQL) databases."
+    },
+    "maintenance": {
+      "title": "System Maintenance",
+      "description": "Maintenance, refactoring, optimization, technology migration and bug fixing in various systems."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "titlePrefix": "Get in",
+    "titleHighlight": "Touch",
+    "subtitle": "Let's talk about your next project",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "socialMedia": "Social Media",
+    "sendMessage": "Send Message",
+    "getInTouch": "Get In Touch",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Describe your project or leave your message...",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "connectWithMe": "Connect",
+    "description": "Developer passionate about creating exceptional digital experiences. Transforming ideas into clean and efficient code.",
+    "rights": "All rights reserved.",
+    "madeWith": "Made with",
+    "using": "using"
+  },
+  "settings": {
+    "title": "Settings",
+    "themeSystem": "System",
+    "themeDark": "Dark",
+    "themeLight": "Light",
+    "languageDefault": "Default Language",
+    "languagePortuguese": "Portuguese",
+    "languageEnglish": "English",
+    "colorRed": "Red",
+    "colorYellow": "Yellow",
+    "colorGreen": "Green",
+    "colorBlue": "Blue",
+    "colorPurple": "Purple"
+  },
+  "history": {
+    "title": "My History",
+    "subtitle": "Get to know my personal journey"
+  },
+  "professional": {
+    "title": "Professional Career",
+    "subtitle": "My experience and qualifications",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "certifications": "Certifications"
+  }
+}
