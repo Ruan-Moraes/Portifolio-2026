@@ -1,73 +1,95 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // ===== CONFIGURAÇÕES =====
 const ACTIVE_SECTION_CONFIG = {
-  /** Offset do topo da viewport para considerar uma seção como ativa */
-  DEFAULT_OFFSET: 100,
-  /** Margem de tolerância para detectar o final da página (em pixels) */
-  BOTTOM_THRESHOLD: 100,
-  /** Delay para debounce do scroll (em ms) - 0 para desabilitar */
-  SCROLL_DEBOUNCE: 0,
+  /** Threshold de interseção (quanto do elemento precisa estar visível) */
+  THRESHOLD: [0, 0.25, 0.5, 0.75, 1],
+  /** Root margin para ajustar a área de "captura" (topo, direita, baixo, esquerda) */
+  ROOT_MARGIN: '-20% 0px -45% 0px',
 } as const;
 
 /**
- * Hook para detectar a seção ativa durante o scroll
+ * Hook para detectar a seção ativa usando IntersectionObserver.
+ * Mais robusto que scroll listeners manuais, pois funciona mesmo
+ * com body locked/fixed (menu mobile).
+ *
  * @param sectionIds - Array com os IDs das seções a serem observadas
- * @param offset - Offset em pixels do topo da viewport
  */
-export function useActiveSection(
-  sectionIds: string[],
-  offset: number = ACTIVE_SECTION_CONFIG.DEFAULT_OFFSET
-): string | null {
+export function useActiveSection(sectionIds: string[]): string | null {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  const calculateActiveSection = useCallback(() => {
-    if (sectionIds.length === 0) return null;
-
-    const scrollPosition = window.scrollY + offset;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-
-    // Verificar se chegou ao final da página
-    // Se sim, ativar a última seção
-    const isAtBottom =
-      window.scrollY + windowHeight >=
-      documentHeight - ACTIVE_SECTION_CONFIG.BOTTOM_THRESHOLD;
-
-    if (isAtBottom) {
-      return sectionIds[sectionIds.length - 1];
-    }
-
-    // Encontrar a seção ativa baseado na posição de scroll
-    // Percorre de trás para frente para encontrar a última seção visível
-    for (let i = sectionIds.length - 1; i >= 0; i--) {
-      const section = document.getElementById(sectionIds[i]);
-      if (section && section.offsetTop <= scrollPosition) {
-        return sectionIds[i];
-      }
-    }
-
-    // Se nenhuma seção foi encontrada, retornar a primeira
-    return sectionIds[0];
-  }, [sectionIds, offset]);
+  // Refs para guardar o observer e os ratios atuais para comparação
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const visibleSections = useRef<Record<string, number>>({});
 
   useEffect(() => {
-    const handleScroll = () => {
-      const newActiveSection = calculateActiveSection();
-      setActiveSection(newActiveSection);
+    // Cleanup prev observer
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    // Se não há seções ou não estamos no browser, early return
+    if (sectionIds.length === 0 || typeof window === 'undefined') {
+      return;
+    }
+
+    // Callback do Observer
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        const id = entry.target.id;
+
+        if (entry.isIntersecting) {
+          visibleSections.current[id] = entry.intersectionRatio;
+        } else {
+          delete visibleSections.current[id];
+        }
+      });
+
+      // Encontrar a seção com maior intersectionRatio
+      const sections = Object.entries(visibleSections.current);
+
+      if (sections.length === 0) {
+        // Se nada visível (ex: topo da página antes da primeira seção trackeada),
+        // pode manter o anterior ou null
+        return;
+      }
+
+      // Ordena por ratio decrescente (o mais visível primeiro)
+      // Se empate no ratio, respeita a ordem do array sectionIds original (hierarquia visual)
+      sections.sort((a, b) => {
+        const ratioDiff = b[1] - a[1];
+        if (Math.abs(ratioDiff) > 0.1) { // Só muda se diferença for significativa
+          return ratioDiff;
+        }
+        // Desempate pela ordem na página
+        return sectionIds.indexOf(a[0]) - sectionIds.indexOf(b[0]);
+      });
+
+      if (sections.length > 0) {
+        setActiveSection(sections[0][0]);
+      }
     };
 
-    // Executar uma vez ao montar
-    handleScroll();
+    // Cria o observer
+    observerRef.current = new IntersectionObserver(handleIntersection, {
+      root: null, // viewport
+      rootMargin: ACTIVE_SECTION_CONFIG.ROOT_MARGIN,
+      threshold: ACTIVE_SECTION_CONFIG.THRESHOLD as unknown as number[],
+    });
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
+    // Observa os elementos
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observerRef.current?.observe(element);
+      }
+    });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      observerRef.current?.disconnect();
+      visibleSections.current = {};
     };
-  }, [calculateActiveSection]);
+  }, [sectionIds]);
 
   return activeSection;
 }

@@ -39,7 +39,7 @@ export function Header({ navItems = defaultNavItems, className = '' }: HeaderPro
 
   // IDs das seções para detectar a ativa
   const sectionIds = navItems.map((item) => item.href.replace('#', ''));
-  const activeSection = useActiveSection(sectionIds, NAV_CONFIG.activeOffset);
+  const activeSection = useActiveSection(sectionIds);
   const { scrollToSection, scrollToTop } = useSmoothScroll({ offset: NAV_CONFIG.scrollOffset });
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

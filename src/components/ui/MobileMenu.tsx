@@ -46,7 +46,7 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
 
   // Hooks de navegação
   const sectionIds = navItems.map((item) => item.href.replace('#', ''));
-  const activeSection = useActiveSection(sectionIds, 120);
+  const activeSection = useActiveSection(sectionIds);
   const { scrollToSection } = useSmoothScroll({ offset: 80 });
 
   // Fechar menu ao redimensionar para desktop
@@ -63,44 +63,31 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
 
   // Bloquear scroll do body quando o menu está aberto
   useEffect(() => {
+    if (!isOpen) return;
+
+    // Salva a posição atual do scroll ANTES de travar
+    const scrollY = window.scrollY;
+
+    // Função para bloquear scroll
     const preventScroll = (e: TouchEvent) => {
-      // Permite scroll dentro do menu, mas bloqueia no resto
       const target = e.target as HTMLElement;
       if (!target.closest('.mobile-menu')) {
         e.preventDefault();
       }
     };
 
-    if (isOpen) {
-      // Salva a posição atual do scroll
-      const scrollY = window.scrollY;
+    // Bloqueia scroll no html e body
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
 
-      // Bloqueia scroll no html e body
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
+    // Previne scroll por touch em dispositivos móveis
+    document.addEventListener('touchmove', preventScroll, { passive: false });
 
-      // Previne scroll por touch em dispositivos móveis
-      document.addEventListener('touchmove', preventScroll, { passive: false });
-    } else {
-      // Restaura o scroll
-      const scrollY = document.body.style.top;
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-
-      // Volta para a posição anterior
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-      }
-    }
-
+    // Cleanup: Restaura o scroll
     return () => {
       document.removeEventListener('touchmove', preventScroll);
       document.documentElement.style.overflow = '';
@@ -109,6 +96,9 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
       document.body.style.top = '';
       document.body.style.left = '';
       document.body.style.right = '';
+
+      // Volta para a posição anterior
+      window.scrollTo(0, scrollY);
     };
   }, [isOpen]);
 

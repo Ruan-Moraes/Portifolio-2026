@@ -60,10 +60,10 @@ export function LanguageSwitcher({
         aria-label={`Mudar para ${currentLanguage === 'pt-BR' ? 'English' : 'Português'}`}
         title={`Mudar para ${currentLanguage === 'pt-BR' ? 'English' : 'Português'}`}
       >
-        <FlagIcon code={currentLanguage} />
+        <FlagIcon code={currentLanguage === 'pt-BR' ? 'en-US' : 'pt-BR'} />
         {showLabel && (
           <span className="language-label">
-            {currentLanguage === 'pt-BR' ? 'PT' : 'EN'}
+            {currentLanguage === 'pt-BR' ? 'EN' : 'PT'}
           </span>
         )}
       </button>
