@@ -1,223 +1,223 @@
 {
-  "seo": {
-    "title": "Ruan Moraes | Desenvolvedor Full-Stack",
-    "description": "Portfólio de Ruan Moraes - Desenvolvedor Full-Stack especializado em React, TypeScript, Java e Spring Boot.",
-    "keywords": "desenvolvedor, full-stack, react, typescript, java, spring boot, portfolio, ruan moraes"
-  },
-  "common": {
-    "portfolio": "Portfólio",
-    "downloadCV": "Baixar CV",
-    "viewProject": "Ver Projeto",
-    "viewCode": "Ver Código",
-    "requestService": "Solicitar Serviço",
-    "learnMore": "Saiba mais",
-    "loading": "Carregando...",
-    "error": "Ocorreu um erro",
-    "tryAgain": "Tentar novamente",
-    "retry": "Tentar novamente",
-    "allRightsReserved": "Todos os direitos reservados",
-    "language": "Idioma",
-    "theme": "Tema",
-    "color": "Cor",
-    "settings": "Configurações",
-    "apply": "Aplicar",
-    "cancel": "Cancelar",
-    "close": "Fechar",
-    "stars": "Estrelas"
-  },
-  "nav": {
-    "main": "Navegação principal",
-    "home": "Início",
-    "about": "Sobre",
-    "career": "Carreira",
-    "history": "História",
-    "professional": "Profissional",
-    "projects": "Projetos",
-    "services": "Serviços",
-    "contact": "Contato",
-    "openMenu": "Abrir menu",
-    "closeMenu": "Fechar menu"
-  },
-  "hero": {
-    "greeting": "Olá, eu sou",
-    "title": "Ruan Moraes",
-    "role": "Desenvolvedor de Software",
-    "description": {
-      "prefix": "Desenvolvedor Trainee na",
-      "company": "CAPYS",
-      "middle": ", com experiência em",
-      "backend": "backend",
-      "and": "e",
-      "frontend": "frontend",
-      "suffix": ". Focado em entregar soluções de qualidade."
+    "seo": {
+        "title": "Ruan Moraes | Desenvolvedor Full-Stack",
+        "description": "Portfólio de Ruan Moraes - Desenvolvedor Full-Stack especializado em React, TypeScript, Java e Spring Boot.",
+        "keywords": "desenvolvedor, full-stack, react, typescript, java, spring boot, portfolio, ruan moraes"
     },
-    "descriptionSimple": "Desenvolvedor Trainee na CAPYS, com experiência em backend e frontend. Focado em entregar soluções de qualidade.",
-    "downloadCV": "Baixar CV"
-  },
-  "about": {
-    "title": "Sobre Mim",
-    "titlePrefix": "Sobre",
-    "titleHighlight": "Mim",
-    "subtitle": "Desenvolvedorde Software com experiência em backend e frontend",
-    "profile": {
-      "title": "Perfil Profissional",
-      "description": "Desenvolvedor de Software com mais de 2 anos de experiência e estudos na área de tecnologia. Atuação sólida em desenvolvimento backend e frontend, incluindo correção de bugs, implementação de novas funcionalidades, otimização de consultas SQL e suporte técnico a equipes. Possuo sólida base em boas práticas de arquitetura de software, código limpo e desenvolvimento orientado a padrões."
+    "common": {
+        "portfolio": "Portfólio",
+        "downloadCV": "Baixar CV",
+        "viewProject": "Ver Projeto",
+        "viewCode": "Ver Código",
+        "requestService": "Solicitar Serviço",
+        "learnMore": "Saiba mais",
+        "loading": "Carregando...",
+        "error": "Ocorreu um erro",
+        "tryAgain": "Tentar novamente",
+        "retry": "Tentar novamente",
+        "allRightsReserved": "Todos os direitos reservados",
+        "language": "Idioma",
+        "theme": "Tema",
+        "color": "Cor",
+        "settings": "Configurações",
+        "apply": "Aplicar",
+        "cancel": "Cancelar",
+        "close": "Fechar",
+        "stars": "Estrelas"
     },
-    "journey": {
-      "title": "Minha Trajetória",
-      "paragraph1": "Minha jornada com a tecnologia começou cedo, aos 8 anos, com a curiosidade de entender como os computadores funcionavam. Aos 12 anos, tive meu primeiro contato com programação por meio de Python. Influenciado por amigos, passei a me interessar também por hardware, o que naturalmente me levou a aprofundar ainda mais o interesse pelo mundo da tecnologia.",
-      "paragraph2": "Após montar meu próprio computador e me aprofundar em hardware, decidi seguir carreira na área de desenvolvimento. Hoje, atuo como Desenvolvedor Trainee na CAPYS, onde aplico meus conhecimentos em Java, Spring Boot, React e bancos de dados para entregar soluções de qualidade."
+    "nav": {
+        "main": "Navegação principal",
+        "home": "Início",
+        "about": "Sobre",
+        "career": "Carreira",
+        "history": "História",
+        "professional": "Profissional",
+        "projects": "Projetos",
+        "services": "Serviços",
+        "contact": "Contato",
+        "openMenu": "Abrir menu",
+        "closeMenu": "Fechar menu"
     },
-    "tech": {
-      "title": "Tecnologias & Competências",
-      "languages": "Linguagens",
-      "backend": "Backend",
-      "frontend": "Frontend",
-      "databases": "Bancos de Dados",
-      "devops": "DevOps & Ferramentas",
-      "architecture": "Arquitetura"
+    "hero": {
+        "greeting": "Olá, eu sou",
+        "title": "Ruan Moraes",
+        "role": "Desenvolvedor de Software",
+        "description": {
+            "prefix": "Desenvolvedor Trainee na",
+            "company": "CAPYS",
+            "middle": ", com experiência em",
+            "backend": "backend",
+            "and": "e",
+            "frontend": "frontend",
+            "suffix": ". Focado em entregar soluções de qualidade."
+        },
+        "descriptionSimple": "Desenvolvedor Trainee na CAPYS, com experiência em backend e frontend. Focado em entregar soluções de qualidade.",
+        "downloadCV": "Baixar CV"
+    },
+    "about": {
+        "title": "Sobre Mim",
+        "titlePrefix": "Sobre",
+        "titleHighlight": "Mim",
+        "subtitle": "Desenvolvedorde Software com experiência em backend e frontend",
+        "profile": {
+            "title": "Perfil Profissional",
+            "description": "Desenvolvedor de Software com mais de 2 anos de experiência e estudos na área de tecnologia. Atuação sólida em desenvolvimento backend e frontend, incluindo correção de bugs, implementação de novas funcionalidades, otimização de consultas SQL e suporte técnico a equipes. Possuo sólida base em boas práticas de arquitetura de software, código limpo e desenvolvimento orientado a padrões."
+        },
+        "journey": {
+            "title": "Minha Trajetória",
+            "paragraph1": "Minha jornada com a tecnologia começou cedo, aos 8 anos, com a curiosidade de entender como os computadores funcionavam. Aos 12 anos, tive meu primeiro contato com programação por meio de Python. Influenciado por amigos, passei a me interessar também por hardware, o que naturalmente me levou a aprofundar ainda mais o interesse pelo mundo da tecnologia.",
+            "paragraph2": "Após montar meu próprio computador e me aprofundar em hardware, decidi seguir carreira na área de desenvolvimento. Hoje, atuo como Desenvolvedor Trainee na CAPYS, onde aplico meus conhecimentos em Java, Spring Boot, React e bancos de dados para entregar soluções de qualidade."
+        },
+        "tech": {
+            "title": "Tecnologias & Competências",
+            "languages": "Linguagens",
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "databases": "Bancos de Dados",
+            "devops": "DevOps & Ferramentas",
+            "architecture": "Arquitetura"
+        }
+    },
+    "career": {
+        "title": "Trajetória de Carreira",
+        "titlePrefix": "Trajetória de",
+        "titleHighlight": "Carreira",
+        "subtitle": "Os principais marcos da minha jornada profissional",
+        "timeline": {
+            "firstContact": {
+                "title": "Primeiro Contato com Tecnologia",
+                "description": "Aos 8 anos, comecei a explorar computadores assistindo vídeos de Minecraft, despertando minha curiosidade pelo mundo digital."
+            },
+            "programming": {
+                "title": "Início na Programação",
+                "description": "Aos 12 anos, tive meu primeiro contato com Python através do curso do Gustavo Guanabara. O interesse por hardware também cresceu."
+            },
+            "ownComputer": {
+                "title": "Montei Meu Próprio PC",
+                "description": "Construí meu primeiro computador com um Xeon E5-2650v2 e GTX 1660TI, consolidando meu conhecimento em hardware."
+            },
+            "university": {
+                "title": "Início da Graduação",
+                "description": "Comecei o Bacharelado em Engenharia de Software na Uninter, formalizando minha carreira na área de tecnologia."
+            },
+            "firstJob": {
+                "title": "Desenvolvedor Trainee @ CAPYS",
+                "description": "Minha primeira oportunidade profissional, atuando com Java, Spring Boot, React e bancos de dados em ambiente real de desenvolvimento."
+            },
+            "future": {
+                "title": "Próximos Passos",
+                "description": "Continuar evoluindo como desenvolvedor, contribuir em projetos desafiadores e explorar novas tecnologias."
+            }
+        }
+    },
+    "projects": {
+        "title": "Meus Projetos",
+        "titlePrefix": "Meus",
+        "titleHighlight": "Projetos",
+        "subtitle": "Alguns dos projetos que desenvolvi",
+        "project": "Projeto",
+        "projectDescription": "Descrição breve do projeto aqui...",
+        "totalProjects": "{{count}} projetos",
+        "noProjects": "Nenhum projeto encontrado",
+        "noDescription": "Sem descrição disponível",
+        "empty": "Nenhum projeto encontrado. Verifique a conexão ou tente novamente mais tarde.",
+        "loadingProjects": "Carregando projetos...",
+        "errorLoading": "Erro ao carregar projetos",
+        "viewAll": "Ver todos os projetos",
+        "technologies": "Tecnologias",
+        "page": "Página {{current}} de {{total}}",
+        "items": {
+            "project1": {
+                "title": "Portfólio Pessoal",
+                "description": "Site de portfólio responsivo com suporte a múltiplos idiomas e temas personalizáveis."
+            },
+            "project2": {
+                "title": "API de Gerenciamento",
+                "description": "API RESTful para gerenciamento de usuários e autenticação com JWT."
+            },
+            "project3": {
+                "title": "App Mobile",
+                "description": "Aplicativo mobile para controle de tarefas e produtividade pessoal."
+            }
+        }
+    },
+    "services": {
+        "title": "Serviços",
+        "titlePrefix": "Meus",
+        "titleHighlight": "Serviços",
+        "subtitle": "O que posso fazer por você",
+        "webDev": {
+            "title": "Desenvolvimento Web e Mobile",
+            "description": "Criação de sites responsivos, landing pages, sistemas web e aplicativos mobile com tecnologias modernas."
+        },
+        "api": {
+            "title": "Criação de APIs RESTful",
+            "description": "Desenvolvimento de APIs robustas e escaláveis para integração de sistemas e aplicações."
+        },
+        "database": {
+            "title": "Gerenciamento de Banco de Dados",
+            "description": "Desenvolvimento, manutenção e otimização de Banco de Dados relacionais (SQL) e não relacionais (NoSQL)."
+        },
+        "maintenance": {
+            "title": "Manutenção de Sistemas",
+            "description": "Realização de manutenção, refatoração, otimização, migração de tecnologias e correção de erros em diversos sistemas."
+        }
+    },
+    "contact": {
+        "title": "Contato",
+        "titlePrefix": "Entre em",
+        "titleHighlight": "Contato",
+        "subtitle": "Vamos conversar sobre seu próximo projeto",
+        "email": "E-mail",
+        "phone": "Telefone",
+        "location": "Localização",
+        "socialMedia": "Redes Sociais",
+        "sendMessage": "Enviar Mensagem",
+        "getInTouch": "Fale Comigo",
+        "form": {
+            "name": "Nome",
+            "namePlaceholder": "Seu nome completo",
+            "email": "E-mail",
+            "emailPlaceholder": "seu@email.com",
+            "message": "Mensagem",
+            "messagePlaceholder": "Descreva seu projeto ou deixe sua mensagem...",
+            "sending": "Enviando...",
+            "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+            "error": "Erro ao enviar mensagem. Tente novamente."
+        }
+    },
+    "footer": {
+        "navigation": "Navegação",
+        "connectWithMe": "Conecte-se",
+        "description": "Desenvolvedor apaixonado por criar experiências digitais excepcionais. Transformando ideias em código limpo e eficiente.",
+        "rights": "Todos os direitos reservados.",
+        "madeWith": "Feito com",
+        "using": "usando"
+    },
+    "settings": {
+        "title": "Configurações",
+        "themeSystem": "Sistema",
+        "themeDark": "Escuro",
+        "themeLight": "Claro",
+        "languageDefault": "Idioma Padrão",
+        "languagePortuguese": "Português",
+        "languageEnglish": "Inglês",
+        "colorRed": "Vermelho",
+        "colorYellow": "Amarelo",
+        "colorGreen": "Verde",
+        "colorBlue": "Azul",
+        "colorPurple": "Roxo"
+    },
+    "history": {
+        "title": "Minha História",
+        "subtitle": "Conheça minha trajetória pessoal"
+    },
+    "professional": {
+        "title": "Carreira Profissional",
+        "subtitle": "Minha experiência e qualificações",
+        "experience": "Experiência",
+        "education": "Formação",
+        "skills": "Habilidades",
+        "certifications": "Certificações"
     }
-  },
-  "career": {
-    "title": "Trajetória de Carreira",
-    "titlePrefix": "Trajetória de",
-    "titleHighlight": "Carreira",
-    "subtitle": "Os principais marcos da minha jornada profissional",
-    "timeline": {
-      "firstContact": {
-        "title": "Primeiro Contato com Tecnologia",
-        "description": "Aos 8 anos, comecei a explorar computadores assistindo vídeos de Minecraft, despertando minha curiosidade pelo mundo digital."
-      },
-      "programming": {
-        "title": "Início na Programação",
-        "description": "Aos 12 anos, tive meu primeiro contato com Python através do curso do Gustavo Guanabara. O interesse por hardware também cresceu."
-      },
-      "ownComputer": {
-        "title": "Montei Meu Próprio PC",
-        "description": "Construí meu primeiro computador com um Xeon E5-2650v2 e GTX 1660TI, consolidando meu conhecimento em hardware."
-      },
-      "university": {
-        "title": "Início da Graduação",
-        "description": "Comecei o Bacharelado em Engenharia de Software na Uninter, formalizando minha carreira na área de tecnologia."
-      },
-      "firstJob": {
-        "title": "Desenvolvedor Trainee @ CAPYS",
-        "description": "Minha primeira oportunidade profissional, atuando com Java, Spring Boot, React e bancos de dados em ambiente real de desenvolvimento."
-      },
-      "future": {
-        "title": "Próximos Passos",
-        "description": "Continuar evoluindo como desenvolvedor, contribuir em projetos desafiadores e explorar novas tecnologias."
-      }
-    }
-  },
-  "projects": {
-    "title": "Meus Projetos",
-    "titlePrefix": "Meus",
-    "titleHighlight": "Projetos",
-    "subtitle": "Alguns dos projetos que desenvolvi",
-    "project": "Projeto",
-    "projectDescription": "Descrição breve do projeto aqui...",
-    "totalProjects": "{{count}} projetos",
-    "noProjects": "Nenhum projeto encontrado",
-    "noDescription": "Sem descrição disponível",
-    "empty": "Nenhum projeto encontrado. Verifique a conexão ou tente novamente mais tarde.",
-    "loadingProjects": "Carregando projetos...",
-    "errorLoading": "Erro ao carregar projetos",
-    "viewAll": "Ver todos os projetos",
-    "technologies": "Tecnologias",
-    "page": "Página {{current}} de {{total}}",
-    "items": {
-      "project1": {
-        "title": "Portfólio Pessoal",
-        "description": "Site de portfólio responsivo com suporte a múltiplos idiomas e temas personalizáveis."
-      },
-      "project2": {
-        "title": "API de Gerenciamento",
-        "description": "API RESTful para gerenciamento de usuários e autenticação com JWT."
-      },
-      "project3": {
-        "title": "App Mobile",
-        "description": "Aplicativo mobile para controle de tarefas e produtividade pessoal."
-      }
-    }
-  },
-  "services": {
-    "title": "Serviços",
-    "titlePrefix": "Meus",
-    "titleHighlight": "Serviços",
-    "subtitle": "O que posso fazer por você",
-    "webDev": {
-      "title": "Desenvolvimento Web e Mobile",
-      "description": "Criação de sites responsivos, landing pages, sistemas web e aplicativos mobile com tecnologias modernas."
-    },
-    "api": {
-      "title": "Criação de APIs RESTful",
-      "description": "Desenvolvimento de APIs robustas e escaláveis para integração de sistemas e aplicações."
-    },
-    "database": {
-      "title": "Gerenciamento de Banco de Dados",
-      "description": "Desenvolvimento, manutenção e otimização de Banco de Dados relacionais (SQL) e não relacionais (NoSQL)."
-    },
-    "maintenance": {
-      "title": "Manutenção de Sistemas",
-      "description": "Realização de manutenção, refatoração, otimização, migração de tecnologias e correção de erros em diversos sistemas."
-    }
-  },
-  "contact": {
-    "title": "Contato",
-    "titlePrefix": "Entre em",
-    "titleHighlight": "Contato",
-    "subtitle": "Vamos conversar sobre seu próximo projeto",
-    "email": "E-mail",
-    "phone": "Telefone",
-    "location": "Localização",
-    "socialMedia": "Redes Sociais",
-    "sendMessage": "Enviar Mensagem",
-    "getInTouch": "Fale Comigo",
-    "form": {
-      "name": "Nome",
-      "namePlaceholder": "Seu nome completo",
-      "email": "E-mail",
-      "emailPlaceholder": "seu@email.com",
-      "message": "Mensagem",
-      "messagePlaceholder": "Descreva seu projeto ou deixe sua mensagem...",
-      "sending": "Enviando...",
-      "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
-      "error": "Erro ao enviar mensagem. Tente novamente."
-    }
-  },
-  "footer": {
-    "navigation": "Navegação",
-    "connectWithMe": "Conecte-se",
-    "description": "Desenvolvedor apaixonado por criar experiências digitais excepcionais. Transformando ideias em código limpo e eficiente.",
-    "rights": "Todos os direitos reservados.",
-    "madeWith": "Feito com",
-    "using": "usando"
-  },
-  "settings": {
-    "title": "Configurações",
-    "themeSystem": "Sistema",
-    "themeDark": "Escuro",
-    "themeLight": "Claro",
-    "languageDefault": "Idioma Padrão",
-    "languagePortuguese": "Português",
-    "languageEnglish": "Inglês",
-    "colorRed": "Vermelho",
-    "colorYellow": "Amarelo",
-    "colorGreen": "Verde",
-    "colorBlue": "Azul",
-    "colorPurple": "Roxo"
-  },
-  "history": {
-    "title": "Minha História",
-    "subtitle": "Conheça minha trajetória pessoal"
-  },
-  "professional": {
-    "title": "Carreira Profissional",
-    "subtitle": "Minha experiência e qualificações",
-    "experience": "Experiência",
-    "education": "Formação",
-    "skills": "Habilidades",
-    "certifications": "Certificações"
-  }
 }
