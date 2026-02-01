@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { SMOOTH_SCROLL_CONFIG } from './useSmoothScroll.config';
 
 interface UseSmoothScrollOptions {
     offset?: number;
@@ -9,11 +10,15 @@ interface UseSmoothScrollOptions {
  * Hook para navegação suave entre seções
  */
 export function useSmoothScroll(options: UseSmoothScrollOptions = {}) {
-    const { offset = 80, behavior = 'smooth' } = options;
+    const {
+        offset = SMOOTH_SCROLL_CONFIG.OFFSET,
+        behavior = SMOOTH_SCROLL_CONFIG.BEHAVIOR,
+    } = options;
 
     const scrollToSection = useCallback(
         (sectionId: string) => {
             const element = document.getElementById(sectionId);
+
             if (!element) return;
 
             const elementPosition = element.offsetTop - offset;

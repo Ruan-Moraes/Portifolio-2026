@@ -1,4 +1,5 @@
 import { Layout } from './components/layout';
+
 import {
     Hero,
     About,
@@ -7,7 +8,9 @@ import {
     Services,
     Contact,
 } from './components/sections';
+
 import { SEO } from './components/ui';
+
 import './index.css';
 
 function App() {

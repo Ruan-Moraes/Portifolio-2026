@@ -1,4 +1,4 @@
-import type { AccentColor } from '../../types';
+export type AccentColor = 'red' | 'yellow' | 'green' | 'blue' | 'purple';
 
 export type ThemeMode = 'light' | 'dark' | 'system';
 export type ResolvedTheme = 'light' | 'dark';

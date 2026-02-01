@@ -5,3 +5,4 @@ export { ThemeSwitcher } from './theme/ThemeSwitcher.tsx';
 export { SettingsModal } from './settings_modal/SettingsModal.tsx';
 export { MobileMenu } from './menu/MobileMenu.tsx';
 export { SEO } from './seo/SEO.tsx';
+export { LoadingFallback } from './loading/LoadingFallback.tsx';

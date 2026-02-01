@@ -1,66 +1,18 @@
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import { i18nConfig } from './i18n.config';
+
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-import ptBR from './locales/pt-BR.json';
-import enUS from './locales/en-US.json';
+import { initReactI18next } from 'react-i18next';
 
-// Recursos de tradução
-const resources = {
-    'pt-BR': {
-        translation: ptBR,
-    },
-    'en-US': {
-        translation: enUS,
-    },
-};
+// Idiomas suportados e tipos
+export { supportedLanguages, type SupportedLanguage } from './i18n.config';
 
-// Idiomas suportados
-export const supportedLanguages = [
-    { code: 'pt-BR', name: 'Português', flag: '🇧🇷' },
-    { code: 'en-US', name: 'English', flag: '🇺🇸' },
-] as const;
+// Aplicar plugins
+i18n.use(LanguageDetector);
+i18n.use(initReactI18next);
 
-export type SupportedLanguage = (typeof supportedLanguages)[number]['code'];
-
-// Configuração do i18n
-i18n
-    // Detecta o idioma do navegador
-    .use(LanguageDetector)
-    // Integração com React
-    .use(initReactI18next)
-    // Inicialização
-    .init({
-        resources,
-        fallbackLng: 'pt-BR',
-        supportedLngs: ['pt-BR', 'en-US'],
-
-        // Configurações de detecção
-        detection: {
-            // Ordem de prioridade para detectar o idioma
-            order: ['localStorage', 'navigator', 'htmlTag'],
-            // Onde armazenar a preferência do usuário
-            caches: ['localStorage'],
-            // Key no localStorage
-            lookupLocalStorage: 'portfolio-language',
-        },
-
-        interpolation: {
-            // React já faz escape de XSS
-            escapeValue: false,
-        },
-
-        // Configurações de namespace
-        defaultNS: 'translation',
-        ns: ['translation'],
-
-        // Debug em desenvolvimento
-        debug: import.meta.env.DEV,
-
-        react: {
-            // Suspense habilitado para lazy loading
-            useSuspense: true,
-        },
-    });
+// Inicialização
+i18n.init(i18nConfig);
 
 export default i18n;

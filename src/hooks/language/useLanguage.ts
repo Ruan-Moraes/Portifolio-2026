@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
-import { supportedLanguages, type SupportedLanguage } from '../i18n';
+import { supportedLanguages, type SupportedLanguage } from '../../i18n';
 
 /**
  * Hook customizado para gerenciar idioma da aplicação
@@ -13,7 +13,7 @@ export function useLanguage() {
     const changeLanguage = useCallback(
         (language: SupportedLanguage) => {
             i18n.changeLanguage(language);
-            // Atualiza o atributo lang do HTML
+
             document.documentElement.lang = language;
         },
         [i18n]
@@ -21,6 +21,7 @@ export function useLanguage() {
 
     const toggleLanguage = useCallback(() => {
         const newLanguage = currentLanguage === 'pt-BR' ? 'en-US' : 'pt-BR';
+
         changeLanguage(newLanguage);
     }, [currentLanguage, changeLanguage]);
 

@@ -35,10 +35,10 @@ src/
 │   ├── sections/        # Hero, About, Career, Projects, Services, Contact
 │   └── ui/              # AnimatedSection, ThemeSwitcher, LanguageSwitcher, MobileMenu, SEO
 ├── contexts/            # ThemeProvider
-├── hooks/               # useLanguage, useGitHub, useActiveSection, useSmoothScroll, useContactForm
+├── hooks/               # Custom hooks padronizados (lógica/config)
 ├── i18n/                # Configuração i18next e traduções
-├── services/            # githubService (API do GitHub)
-├── types/               # Tipos TypeScript
+├── services/            # Serviços (GitHub) com separação de lógica e config
+├── types/               # Tipos TypeScript organizados por domínio
 ├── App.tsx
 ├── main.tsx
 └── index.css            # Estilos globais + Tailwind
@@ -72,8 +72,8 @@ Para configurar o download do CV:
 
 O serviço busca repositórios automaticamente do GitHub. Para alterar o usuário:
 
-1. Edite `src/services/githubService.ts`
-2. Altere `GITHUB_USERNAME` para seu usuário
+1. Edite `src/services/github/githubService.config.ts`
+2. Altere `username` em `GITHUB_CONFIG` para seu usuário
 3. Os repositórios serão carregados automaticamente com cache de 30 minutos
 
 ## 📬 Configuração do Formulário de Contato
@@ -82,7 +82,7 @@ O formulário usa Formspree para envio de mensagens:
 
 1. Crie uma conta em [formspree.io](https://formspree.io)
 2. Crie um novo formulário e copie o ID
-3. Edite `src/hooks/useContactForm.ts`
+3. Edite `src/hooks/contact-form/useContactForm.config.ts` (ou o hook correspondente)
 4. Substitua `YOUR_FORM_ID` pelo ID do seu formulário
 
 ## 🚀 Deploy na Vercel

@@ -13,21 +13,6 @@ export const CONTACT_CONFIG: ContactInfo = {
     },
 } as const;
 
-export const GITHUB_CONFIG = {
-    username: 'Ruan-Moraes',
-    apiUrl: 'https://api.github.com/users/Ruan-Moraes/repos',
-    perPage: 128,
-    manualRepos: [
-        'Accounts',
-        'Translate-API',
-        'To-do-list',
-        'Proxy-translate',
-        'student-management-ui',
-        'contact_system',
-        'student_management_api',
-    ],
-};
-
 export const ACCENT_COLORS: Record<
     AccentColor,
     { value: string; label: string }

@@ -1,32 +1,21 @@
-import type { GitHubRepository, Project } from '../types';
+import {
+    GITHUB_CONFIG,
+    type GitHubRepository,
+    type Project,
+    type CacheData,
+} from './githubService.config';
 
-// ===== CONFIGURAÇÕES =====
-const GITHUB_USERNAME = 'Ruan-Moraes';
-const GITHUB_API_URL = 'https://api.github.com';
-const CACHE_KEY = 'github-repos-cache';
-const CACHE_DURATION = 1000 * 60 * 30; // 30 minutos
-
-// ===== TIPOS =====
-interface CacheData {
-    data: GitHubRepository[];
-    timestamp: number;
-}
-
-// ===== SERVIÇO =====
 export const githubService = {
-    /**
-     * Busca repositórios do GitHub com cache
-     */
     async getRepositories(): Promise<GitHubRepository[]> {
-        // Verificar cache
         const cached = this.getFromCache();
+
         if (cached) {
             return cached;
         }
 
         try {
             const response = await fetch(
-                `${GITHUB_API_URL}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
+                `${GITHUB_CONFIG.apiUrl}/users/${GITHUB_CONFIG.username}/repos?sort=updated&per_page=${GITHUB_CONFIG.perPage}`,
                 {
                     headers: {
                         Accept: 'application/vnd.github.v3+json',
@@ -61,10 +50,13 @@ export const githubService = {
     repoToProject(repo: GitHubRepository): Project {
         // Determinar URL de demonstração
         let liveUrl: string | undefined;
+
         if (repo.homepage) {
             liveUrl = repo.homepage;
-        } else if (repo.has_pages) {
-            liveUrl = `https://${GITHUB_USERNAME.toLowerCase()}.github.io/${repo.name}`;
+        }
+
+        if (repo.has_pages) {
+            liveUrl = `https://${GITHUB_CONFIG.username.toLowerCase()}.github.io/${repo.name}`;
         }
 
         return {
@@ -79,9 +71,6 @@ export const githubService = {
         };
     },
 
-    /**
-     * Formata nome do repositório para exibição
-     */
     formatRepoName(name: string): string {
         return name
             .replace(/-/g, ' ')
@@ -111,19 +100,20 @@ export const githubService = {
         return projects;
     },
 
-    /**
-     * Obtém dados do cache
-     */
     getFromCache(): GitHubRepository[] | null {
         try {
-            const cached = localStorage.getItem(CACHE_KEY);
+            const cached = localStorage.getItem(GITHUB_CONFIG.cacheKey);
+
             if (!cached) return null;
 
             const { data, timestamp }: CacheData = JSON.parse(cached);
-            const isExpired = Date.now() - timestamp > CACHE_DURATION;
+
+            const isExpired =
+                Date.now() - timestamp > GITHUB_CONFIG.cacheDuration;
 
             if (isExpired) {
-                localStorage.removeItem(CACHE_KEY);
+                localStorage.removeItem(GITHUB_CONFIG.cacheKey);
+
                 return null;
             }
 
@@ -133,25 +123,18 @@ export const githubService = {
         }
     },
 
-    /**
-     * Salva dados no cache
-     */
     saveToCache(data: GitHubRepository[]): void {
         try {
             const cacheData: CacheData = {
                 data,
                 timestamp: Date.now(),
             };
-            localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+            localStorage.setItem(
+                GITHUB_CONFIG.cacheKey,
+                JSON.stringify(cacheData)
+            );
         } catch (error) {
             console.warn('Failed to save to cache:', error);
         }
-    },
-
-    /**
-     * Limpa o cache
-     */
-    clearCache(): void {
-        localStorage.removeItem(CACHE_KEY);
     },
 };

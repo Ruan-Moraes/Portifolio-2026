@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { Project } from '../types';
-import { githubService } from '../services/githubService';
+
+import type { Project } from '../../types';
+
+import { githubService } from '../../services';
 
 interface UseGitHubReturn {
     projects: Project[];
@@ -15,6 +17,7 @@ interface UseGitHubReturn {
  */
 export function useGitHub(limit?: number): UseGitHubReturn {
     const [projects, setProjects] = useState<Project[]>([]);
+
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -24,6 +27,7 @@ export function useGitHub(limit?: number): UseGitHubReturn {
 
         try {
             const data = await githubService.getProjects(limit);
+
             setProjects(data);
         } catch (err) {
             const errorMessage =
@@ -31,6 +35,7 @@ export function useGitHub(limit?: number): UseGitHubReturn {
                     ? err.message
                     : 'Erro ao carregar projetos';
             setError(errorMessage);
+
             console.error('useGitHub error:', err);
         } finally {
             setIsLoading(false);

@@ -1,4 +1,4 @@
-import { useLanguage } from '../../../hooks/useLanguage.ts';
+import { useLanguage } from '../../../hooks';
 
 import type { SupportedLanguage } from '../../../i18n';
 
