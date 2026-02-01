@@ -28,12 +28,15 @@ export const GITHUB_CONFIG = {
     ],
 };
 
-export const ACCENT_COLORS: Record<AccentColor, string> = {
-    red: '#ff5f5a',
-    yellow: '#ffbe2e',
-    green: '#2aca44',
-    blue: '#2e60f2',
-    purple: '#662ef2',
+export const ACCENT_COLORS: Record<
+    AccentColor,
+    { value: string; label: string }
+> = {
+    red: { value: '#ff5f5a', label: 'Vermelho' },
+    yellow: { value: '#ffbe2e', label: 'Amarelo' },
+    green: { value: '#2aca44', label: 'Verde' },
+    blue: { value: '#2e60f2', label: 'Azul' },
+    purple: { value: '#662ef2', label: 'Roxo' },
 };
 
 export const PAGINATION = {

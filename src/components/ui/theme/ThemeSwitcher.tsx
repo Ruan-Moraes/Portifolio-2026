@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
 
-import { useTheme, ACCENT_COLORS } from '../../../contexts';
+import { useTheme } from '../../../contexts';
+
 import type { AccentColor } from '../../../types';
 
 import { MoonIcon, SunIcon } from '../../icons/Icons.tsx';
 
 import { themeModes } from './ThemeSwitcher.config.ts';
+import { ACCENT_COLORS } from '../../../config';
 
 interface ThemeSwitcherProps {
     variant?: 'full' | 'compact' | 'icon-only';

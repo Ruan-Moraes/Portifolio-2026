@@ -1,2 +1,5 @@
-export { ThemeProvider, useTheme, ACCENT_COLORS } from './ThemeContext';
-export type { ThemeMode, ResolvedTheme } from './ThemeContext';
+export { ThemeProvider } from './theme/ThemeContext.tsx';
+
+export { useTheme } from './theme/useTheme';
+
+export type { ThemeMode, ResolvedTheme } from './theme/ThemeContext.config';
