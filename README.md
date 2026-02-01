@@ -1,138 +1,204 @@
-# Portfólio 2026 - Ruan Moraes
+# 🚀 Portfólio - Ruan Moraes
 
-Portfólio pessoal moderno desenvolvido com React, TypeScript, Tailwind CSS v4 e i18n.
+Portfólio pessoal moderno e responsivo com sistema de temas, internacionalização e integração com GitHub API.
 
-## 🚀 Tecnologias
+## ✨ Funcionalidades
 
-- **React 19** - Biblioteca UI
-- **TypeScript 5.9** - Tipagem estática
-- **Vite 7** - Build tool e dev server
-- **Tailwind CSS 4** - Framework CSS com @theme
-- **i18next** - Internacionalização (PT-BR / EN-US)
+### 🎨 Personalização
+- **Sistema de Temas**: Modo claro, escuro ou automático (sistema)
+- **5 Cores de Destaque**: Roxo, azul, verde, laranja e rosa
+- **Configurações Persistentes**: Preferências salvas no navegador
 
-## 📦 Instalação
+### 🌍 Internacionalização
+- **Suporte a 2 Idiomas**: Português (PT-BR) e Inglês (EN-US)
+- **Detecção Automática**: Identifica o idioma do navegador
+- **Troca Instantânea**: Mude o idioma sem recarregar a página
+
+### 🎭 Interface e Animações
+- **Animações Suaves**: Elementos aparecem gradualmente ao rolar
+- **Menu Responsivo**: Menu hamburger para dispositivos móveis
+- **Navegação Inteligente**: Scroll suave e indicador de seção ativa
+- **Modal de Configurações**: Acesso rápido às preferências
+
+### 📱 Seções do Portfólio
+- **Hero**: Apresentação com CTA para download de CV
+- **Sobre**: Descrição profissional e habilidades
+- **Carreira**: Timeline de experiências profissionais
+- **Projetos**: Integração com GitHub API para mostrar repositórios
+- **Serviços**: Áreas de atuação e especialidades
+- **Contato**: Formulário com validação e redes sociais
+
+### 🔧 Recursos Técnicos
+- **GitHub API**: Busca automática de repositórios com cache
+- **Formulário de Contato**: Validação completa e integração com Formspree
+- **SEO Otimizado**: Meta tags, Open Graph e Twitter Cards
+- **Performance**: Cache inteligente e lazy loading
+- **Acessibilidade**: Semântica HTML e navegação por teclado
+
+## 🛠️ Tecnologias
+
+- **React 19** - Biblioteca JavaScript para interfaces
+- **TypeScript 5.9** - Superset JavaScript com tipagem estática
+- **Vite 7** - Build tool rápida e moderna
+- **Tailwind CSS 4** - Framework CSS utility-first
+- **i18next** - Framework de internacionalização
+- **GitHub API** - Integração com repositórios
+
+## 📦 Instalação e Uso
 
 ```bash
-# Instalar dependências
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/portfolio-2026.git
+cd portfolio-2026
+
+# 2. Instale as dependências
 npm install
 
-# Iniciar servidor de desenvolvimento
+# 3. Inicie o servidor de desenvolvimento
 npm run dev
 
+# 4. Acesse no navegador
+# http://localhost:5173
+```
+
+## ⚙️ Configuração
+
+### 1. Informações Pessoais
+
+Edite os arquivos de tradução em `src/i18n/locales/`:
+- `pt-BR.json` - Conteúdo em português
+- `en-US.json` - Conteúdo em inglês
+
+### 2. Currículo (CV)
+
+Para ativar o download do CV:
+
+1. Coloque seu arquivo PDF em `public/cv/`
+2. Nomeie como `Curriculo-Ruan-Moraes.pdf`
+3. Ou altere o caminho em `src/components/sections/hero/Hero.config.ts`
+
+### 3. Repositórios do GitHub
+
+Para exibir seus projetos do GitHub:
+
+1. Abra `src/services/github/githubService.config.ts`
+2. Altere o campo `username`:
+
+```typescript
+export const GITHUB_CONFIG = {
+    username: 'seu-usuario-github',
+    // ...
+}
+```
+
+Os repositórios serão carregados automaticamente com cache de 30 minutos.
+
+### 4. Formulário de Contato
+
+Para receber mensagens do formulário:
+
+1. Crie uma conta gratuita em [formspree.io](https://formspree.io)
+2. Crie um novo formulário e copie o ID
+3. Edite `src/hooks/contact-form/useContactForm.config.ts`:
+
+```typescript
+export const CONTACT_FORM_CONFIG = {
+    formspreeEndpoint: 'https://formspree.io/f/SEU_FORM_ID',
+    // ...
+}
+```
+
+### 5. SEO e Redes Sociais
+
+Atualize as meta tags em `src/components/ui/seo/Seo.config.ts`:
+
+```typescript
+export const SEO_CONFIG = {
+    title: 'Seu Nome - Desenvolvedor Full-Stack',
+    description: 'Sua descrição profissional',
+    siteUrl: 'https://seu-dominio.com',
+    // ...
+}
+```
+
+## 🚀 Deploy
+
+### Deploy na Vercel (Recomendado)
+
+1. Crie uma conta em [vercel.com](https://vercel.com)
+2. Conecte seu repositório GitHub
+3. A Vercel detecta automaticamente o Vite
+4. Clique em "Deploy"
+
+Pronto! Seu portfólio estará online em segundos.
+
+### Deploy Manual
+
+```bash
 # Build para produção
 npm run build
 
-# Preview do build
-npm run preview
+# Os arquivos estarão em /dist
+# Faça upload para seu servidor ou CDN
 ```
 
-## 🏗️ Estrutura do Projeto
+## 📝 Scripts Disponíveis
+
+```bash
+npm run dev          # Inicia servidor de desenvolvimento
+npm run build        # Gera build de produção
+npm run preview      # Preview do build de produção
+npm run lint         # Verifica problemas no código
+npm run lint:fix     # Corrige problemas automaticamente
+npm run format       # Formata código com Prettier
+npm run type-check   # Verifica tipos TypeScript
+```
+
+## 🏗️ Arquitetura do Projeto
 
 ```
 src/
 ├── components/
-│   ├── layout/          # Header, Footer, Section
-│   ├── sections/        # Hero, About, Career, Projects, Services, Contact
-│   └── ui/              # AnimatedSection, ThemeSwitcher, LanguageSwitcher, MobileMenu, SEO
-├── contexts/            # ThemeProvider
-├── hooks/               # Custom hooks padronizados (lógica/config)
-├── i18n/                # Configuração i18next e traduções
-├── services/            # Serviços (GitHub) com separação de lógica e config
-├── types/               # Tipos TypeScript organizados por domínio
-├── App.tsx
-├── main.tsx
-└── index.css            # Estilos globais + Tailwind
+│   ├── icons/              # Ícones SVG
+│   ├── layout/             # Header, Footer, Layout
+│   ├── sections/           # Seções do portfólio
+│   │   ├── about/
+│   │   ├── career/
+│   │   ├── contact/
+│   │   ├── hero/
+│   │   ├── projects/
+│   │   └── service/
+│   └── ui/                 # Componentes reutilizáveis
+│       ├── animated/
+│       ├── button/
+│       ├── language/
+│       ├── menu/
+│       ├── seo/
+│       ├── settings_modal/
+│       └── theme/
+├── contexts/
+│   └── theme/              # Context API para temas
+├── hooks/                  # Custom hooks
+│   ├── active-section/
+│   ├── contact-form/
+│   ├── github/
+│   ├── intersection-observer/
+│   ├── language/
+│   └── smooth-scroll/
+├── i18n/                   # Internacionalização
+│   └── locales/
+│       ├── en-US.json
+│       └── pt-BR.json
+├── services/               # Integrações externas
+│   └── github/
+├── types/                  # Tipos TypeScript
+├── utils/                  # Funções utilitárias
+├── App.tsx                 # Componente principal
+├── main.tsx                # Entry point
+└── index.css               # Estilos globais
 ```
 
-## ✨ Funcionalidades
+## 📄 Licença
 
-- ✅ **Sistema de Temas**: Claro, escuro e sistema
-- ✅ **Cores de Destaque**: 5 cores personalizáveis
-- ✅ **Internacionalização**: Português e Inglês
-- ✅ **Animações**: Animações de entrada com Intersection Observer
-- ✅ **GitHub API**: Busca automática de repositórios
-- ✅ **Download de CV**: Botão funcional para download de PDF
-- ✅ **Navegação Suave**: Scroll suave entre seções
-- ✅ **Indicador de Seção Ativa**: Destaque visual no menu
-- ✅ **Modal de Configurações**: Acesso rápido às preferências
-- ✅ **Menu Mobile**: Menu hamburger responsivo
-- ✅ **Formulário de Contato**: Com validação e integração Formspree
-- ✅ **SEO Completo**: Meta tags, Open Graph, Twitter Cards
-- ✅ **Responsivo**: Layout adaptável a todos os dispositivos
+Fique a vontande de copiar e substituir por suas próprias informações.
 
-## 📄 Configuração do CV
-
-Para configurar o download do CV:
-
-1. Coloque seu arquivo PDF em `public/cv/`
-2. Nomeie como `curriculo-ruan-moraes.pdf`
-3. Ou altere o caminho em `src/components/sections/Hero.tsx`
-
-## 🔧 Configuração do GitHub
-
-O serviço busca repositórios automaticamente do GitHub. Para alterar o usuário:
-
-1. Edite `src/services/github/githubService.config.ts`
-2. Altere `username` em `GITHUB_CONFIG` para seu usuário
-3. Os repositórios serão carregados automaticamente com cache de 30 minutos
-
-## 📬 Configuração do Formulário de Contato
-
-O formulário usa Formspree para envio de mensagens:
-
-1. Crie uma conta em [formspree.io](https://formspree.io)
-2. Crie um novo formulário e copie o ID
-3. Edite `src/hooks/contact-form/useContactForm.config.ts` (ou o hook correspondente)
-4. Substitua `YOUR_FORM_ID` pelo ID do seu formulário
-
-## 🚀 Deploy na Vercel
-
-### Opção 1: Deploy via CLI
-
-```bash
-# Instalar Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Opção 2: Deploy via GitHub
-
-1. Push o código para um repositório GitHub
-2. Acesse [vercel.com](https://vercel.com)
-3. Importe o repositório
-4. A Vercel detectará automaticamente o Vite
-5. Clique em "Deploy"
-
-### Variáveis de Ambiente (opcional)
-
-Configure na Vercel se necessário:
-
-- `VITE_SITE_URL` - URL do site em produção
-- `VITE_FORMSPREE_ENDPOINT` - Endpoint do Formspree
-- `VITE_GITHUB_USERNAME` - Usuário do GitHub
-
-## 📁 Arquivos de Configuração
-
-- `vercel.json` - Configurações da Vercel (rewrites, headers, cache)
-- `robots.txt` - Diretivas para crawlers
-- `sitemap.xml` - Mapa do site para SEO
-- `.env.example` - Exemplo de variáveis de ambiente
-
-## 🔒 Segurança
-
-O projeto inclui headers de segurança via `vercel.json`:
-
-- `X-Content-Type-Options: nosniff`
-- `X-Frame-Options: DENY`
-- `X-XSS-Protection: 1; mode=block`
-- `Referrer-Policy: strict-origin-when-cross-origin`
-
-## 📝 Licença
-
-Este projeto é de uso pessoal.
-
----
-
-Desenvolvido por **Ruan Moraes** 💜
