@@ -224,6 +224,136 @@ const MaintenanceIcon = () => (
     </svg>
 );
 
+const BrazilFlag = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="15"
+        viewBox="0 0 20 15"
+    >
+        <rect width="20" height="15" fill="#009739" />
+        <polygon points="10,1 19,7.5 10,14 1,7.5" fill="#FEDD00" />
+        <circle cx="10" cy="7.5" r="3.5" fill="#012169" />
+        <path
+            d="M7,7 Q10,5.5 13,8"
+            stroke="#fff"
+            strokeWidth="0.5"
+            fill="none"
+        />
+    </svg>
+);
+
+const USAFlag = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="15"
+        viewBox="0 0 20 15"
+    >
+        <rect width="20" height="15" fill="#fff" />
+        <rect width="20" height="1.15" y="0" fill="#B22234" />
+        <rect width="20" height="1.15" y="2.31" fill="#B22234" />
+        <rect width="20" height="1.15" y="4.62" fill="#B22234" />
+        <rect width="20" height="1.15" y="6.92" fill="#B22234" />
+        <rect width="20" height="1.15" y="9.23" fill="#B22234" />
+        <rect width="20" height="1.15" y="11.54" fill="#B22234" />
+        <rect width="20" height="1.15" y="13.85" fill="#B22234" />
+        <rect width="8" height="8.08" fill="#3C3B6E" />
+    </svg>
+);
+
+const GearIcon = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+        <circle cx="12" cy="12" r="3" />
+    </svg>
+);
+
+const CloseIcon = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+    </svg>
+);
+
+const SunIcon = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2" />
+        <path d="M12 20v2" />
+        <path d="m4.93 4.93 1.41 1.41" />
+        <path d="m17.66 17.66 1.41 1.41" />
+        <path d="M2 12h2" />
+        <path d="M20 12h2" />
+        <path d="m6.34 17.66-1.41 1.41" />
+        <path d="m19.07 4.93-1.41 1.41" />
+    </svg>
+);
+
+const MoonIcon = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+    </svg>
+);
+
+const MonitorIcon = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <rect width="20" height="14" x="2" y="3" rx="2" />
+        <line x1="8" x2="16" y1="21" y2="21" />
+        <line x1="12" x2="12" y1="17" y2="21" />
+    </svg>
+);
+
 export {
     GitHubIcon,
     LinkedInIcon,
@@ -239,4 +369,11 @@ export {
     ApiIcon,
     DatabaseIcon,
     MaintenanceIcon,
+    BrazilFlag,
+    USAFlag,
+    GearIcon,
+    CloseIcon,
+    SunIcon,
+    MoonIcon,
+    MonitorIcon,
 };

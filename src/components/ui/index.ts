@@ -1,7 +1,7 @@
-export { AnimatedSection } from './AnimatedSection';
-export { Button } from './Button';
-export { LanguageSwitcher } from './LanguageSwitcher';
-export { ThemeSwitcher } from './ThemeSwitcher';
-export { SettingsModal } from './SettingsModal';
-export { MobileMenu } from './MobileMenu';
-export { SEO, SEO_CONFIG } from './SEO';
+export { AnimatedSection } from './animated/AnimatedSection.tsx';
+export { Button } from './button/Button.tsx';
+export { LanguageSwitcher } from './language/LanguageSwitcher.tsx';
+export { ThemeSwitcher } from './theme/ThemeSwitcher.tsx';
+export { SettingsModal } from './settings_modal/SettingsModal.tsx';
+export { MobileMenu } from './menu/MobileMenu.tsx';
+export { SEO } from './seo/SEO.tsx';

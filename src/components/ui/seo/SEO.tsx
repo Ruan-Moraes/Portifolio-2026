@@ -1,37 +1,16 @@
 import { useEffect } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
-// ===== CONFIGURAÇÕES DE SEO =====
-export const SEO_CONFIG = {
-    /** Nome do site */
-    siteName: 'Ruan Moraes',
-    /** URL base do site (atualizar para produção) */
-    siteUrl: 'https://ruanmoraes.dev',
-    /** Imagem padrão para compartilhamento */
-    defaultImage: '/og-image.png',
-    /** Twitter handle */
-    twitterHandle: '@ruanmoraes_dev',
-    /** Tipo de conteúdo padrão */
-    type: 'website',
-    /** Locale padrão */
-    defaultLocale: 'pt_BR',
-} as const;
+import { SEO_CONFIG } from './Seo.config.ts';
 
-// ===== TIPOS =====
 interface SEOProps {
-    /** Título da página */
     title?: string;
-    /** Descrição da página */
     description?: string;
-    /** URL canônica */
     canonical?: string;
-    /** Imagem para compartilhamento */
     image?: string;
-    /** Tipo de conteúdo (website, article, etc) */
     type?: string;
-    /** Não indexar esta página */
     noIndex?: boolean;
-    /** Keywords para SEO (separadas por vírgula) */
     keywords?: string;
 }
 
@@ -50,34 +29,30 @@ export function SEO({
 }: SEOProps) {
     const { t, i18n } = useTranslation();
 
-    // Valores padrão das traduções
     const defaultTitle = t(
         'seo.title',
         'Ruan Moraes | Desenvolvedor Full-Stack'
     );
     const defaultDescription = t(
         'seo.description',
-        'Portfólio de Ruan Moraes - Desenvolvedor Full-Stack especializado em React, TypeScript, Java e Spring Boot.'
-    );
-    const defaultKeywords = t(
-        'seo.keywords',
-        'desenvolvedor, full-stack, react, typescript, java, spring boot, portfolio'
+        'Portfólio de Ruan Moraes - Desenvolvedor Full-Stack especializado em React, TypeScript, Java, C#, Spring Boot e Dotnet.'
     );
 
-    // Valores finais
+    const defaultKeywords = t(
+        'seo.keywords',
+        'desenvolvedor, full-stack, react, typescript, java, c#, spring boot, dotnet, portfolio'
+    );
+
     const finalTitle = title || defaultTitle;
     const finalDescription = description || defaultDescription;
-    const finalImage =
-        image || `${SEO_CONFIG.siteUrl}${SEO_CONFIG.defaultImage}`;
+    const finalImage = image || `${SEO_CONFIG.siteUrl}${SEO_CONFIG.defaultImage}`;
     const finalCanonical = canonical || SEO_CONFIG.siteUrl;
     const finalKeywords = keywords || defaultKeywords;
     const locale = i18n.language === 'en-US' ? 'en_US' : 'pt_BR';
 
     useEffect(() => {
-        // Atualizar título
         document.title = finalTitle;
 
-        // Função helper para criar/atualizar meta tags
         const updateMetaTag = (
             selector: string,
             attribute: string,
@@ -86,21 +61,27 @@ export function SEO({
             let element = document.querySelector(
                 selector
             ) as HTMLMetaElement | null;
+
             if (!element) {
                 element = document.createElement('meta');
+
                 if (selector.includes('property=')) {
                     element.setAttribute(
                         'property',
                         selector.match(/property="([^"]+)"/)?.[1] || ''
                     );
-                } else if (selector.includes('name=')) {
+                }
+
+                if (selector.includes('name=')) {
                     element.setAttribute(
                         'name',
                         selector.match(/name="([^"]+)"/)?.[1] || ''
                     );
                 }
+
                 document.head.appendChild(element);
             }
+
             element.setAttribute(attribute, content);
         };
 
@@ -159,6 +140,7 @@ export function SEO({
         let canonicalLink = document.querySelector(
             'link[rel="canonical"]'
         ) as HTMLLinkElement | null;
+
         if (!canonicalLink) {
             canonicalLink = document.createElement('link');
             canonicalLink.setAttribute('rel', 'canonical');

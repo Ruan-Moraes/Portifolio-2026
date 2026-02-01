@@ -1,32 +1,12 @@
-import type { ReactNode, ElementType, ComponentPropsWithoutRef } from 'react';
+import type { ElementType, ComponentPropsWithoutRef } from 'react';
 
-import { useIntersectionObserver } from '../../hooks';
+import { useIntersectionObserver } from '../../../hooks';
 
-type AnimationType =
-    | 'fade-in'
-    | 'fade-up'
-    | 'fade-down'
-    | 'fade-left'
-    | 'fade-right'
-    | 'zoom-in'
-    | 'zoom-out';
-
-interface AnimatedSectionProps<T extends ElementType = 'div'> {
-    as?: T;
-    children: ReactNode;
-    animation?: AnimationType;
-    delay?: number;
-    duration?: number;
-    className?: string;
-    rootMargin?: string;
-    threshold?: number;
-    triggerOnce?: boolean;
-}
+import type { AnimatedSectionProps } from './animatedSection.config.ts';
 
 type PolymorphicProps<T extends ElementType> = AnimatedSectionProps<T> &
     Omit<ComponentPropsWithoutRef<T>, keyof AnimatedSectionProps<T>>;
 
-// ===== COMPONENTE =====
 export function AnimatedSection<T extends ElementType = 'div'>({
     as,
     children,
@@ -54,7 +34,7 @@ export function AnimatedSection<T extends ElementType = 'div'>({
 
     return (
         <Component
-            ref={ref as React.Ref<HTMLElement>}
+            ref={ref as unknown as React.Ref<never>}
             className={`animated-section ${animation} ${isIntersecting ? 'is-visible' : ''} ${className}`}
             style={animationStyles}
             {...rest}

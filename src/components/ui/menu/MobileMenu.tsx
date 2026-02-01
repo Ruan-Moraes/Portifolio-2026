@@ -1,34 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useActiveSection, useSmoothScroll } from '../../hooks';
+import { useActiveSection, useSmoothScroll } from '../../../hooks';
 
-// ===== CONFIGURAÇÕES =====
-const MOBILE_MENU_CONFIG = {
-    /** Breakpoint para mostrar o menu mobile (em pixels) */
-    breakpoint: 768,
-    /** Duração da animação (em ms) */
-    animationDuration: 300,
-    /** Z-index do overlay */
-    overlayZIndex: 40,
-    /** Z-index do menu */
-    menuZIndex: 50,
-} as const;
-
-// ===== TIPOS =====
-interface NavItem {
-    href: string;
-    labelKey: string;
-}
+import { MOBILE_MENU_CONFIG, type NavItem } from './MobileMenu.config.ts';
 
 interface MobileMenuProps {
-    /** Items de navegação */
     navItems: NavItem[];
-    /** Classe CSS adicional */
     className?: string;
 }
 
-// ===== ÍCONE HAMBURGER =====
 function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
     return (
         <div className={`hamburger-icon ${isOpen ? 'is-open' : ''}`}>
@@ -39,17 +20,16 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
     );
 }
 
-// ===== COMPONENTE =====
 export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
     const { t } = useTranslation();
+
     const [isOpen, setIsOpen] = useState(false);
 
-    // Hooks de navegação
     const sectionIds = navItems.map((item) => item.href.replace('#', ''));
     const activeSection = useActiveSection(sectionIds);
+
     const { scrollToSection } = useSmoothScroll({ offset: 80 });
 
-    // Fechar menu ao redimensionar para desktop
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= MOBILE_MENU_CONFIG.breakpoint && isOpen) {
@@ -58,19 +38,18 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
         };
 
         window.addEventListener('resize', handleResize);
+
         return () => window.removeEventListener('resize', handleResize);
     }, [isOpen]);
 
-    // Bloquear scroll do body quando o menu está aberto
     useEffect(() => {
         if (!isOpen) return;
 
-        // Salva a posição atual do scroll ANTES de travar
         const scrollY = window.scrollY;
 
-        // Função para bloquear scroll
         const preventScroll = (e: TouchEvent) => {
             const target = e.target as HTMLElement;
+
             if (!target.closest('.mobile-menu')) {
                 e.preventDefault();
             }
@@ -104,7 +83,6 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
         };
     }, [isOpen]);
 
-    // Fechar menu com ESC
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape' && isOpen) {
@@ -113,6 +91,7 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
         };
 
         document.addEventListener('keydown', handleEscape);
+
         return () => document.removeEventListener('keydown', handleEscape);
     }, [isOpen]);
 
@@ -123,9 +102,11 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
     const handleNavClick = useCallback(
         (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
             e.preventDefault();
+
             const sectionId = href.replace('#', '');
+
             setIsOpen(false);
-            // Pequeno delay para a animação de fechar completar
+
             setTimeout(() => {
                 scrollToSection(sectionId);
             }, 100);
@@ -139,7 +120,6 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
 
     return (
         <div className={`mobile-menu-container md:hidden ${className}`}>
-            {/* Botão Hamburger */}
             <button
                 type="button"
                 className="mobile-menu-toggle"
@@ -150,8 +130,6 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
             >
                 <HamburgerIcon isOpen={isOpen} />
             </button>
-
-            {/* Overlay */}
             {isOpen && (
                 <div
                     className="mobile-menu-overlay"
@@ -159,8 +137,6 @@ export function MobileMenu({ navItems, className = '' }: MobileMenuProps) {
                     aria-hidden="true"
                 />
             )}
-
-            {/* Menu */}
             <nav
                 id="mobile-navigation"
                 className={`mobile-menu ${isOpen ? 'is-open' : ''}`}

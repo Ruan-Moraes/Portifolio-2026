@@ -1,5 +1,8 @@
-import { useLanguage } from '../../hooks/useLanguage';
-import type { SupportedLanguage } from '../../i18n';
+import { useLanguage } from '../../../hooks/useLanguage.ts';
+
+import type { SupportedLanguage } from '../../../i18n';
+
+import { BrazilFlag, USAFlag } from '../../icons/Icons.tsx';
 
 interface LanguageSwitcherProps {
     variant?: 'button' | 'select' | 'minimal';
@@ -8,48 +11,10 @@ interface LanguageSwitcherProps {
     className?: string;
 }
 
-// ===== ÍCONES DE BANDEIRA SVG =====
-const BrazilFlag = () => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="15"
-        viewBox="0 0 20 15"
-    >
-        <rect width="20" height="15" fill="#009739" />
-        <polygon points="10,1 19,7.5 10,14 1,7.5" fill="#FEDD00" />
-        <circle cx="10" cy="7.5" r="3.5" fill="#012169" />
-        <path
-            d="M7,7 Q10,5.5 13,8"
-            stroke="#fff"
-            strokeWidth="0.5"
-            fill="none"
-        />
-    </svg>
-);
-
-const USAFlag = () => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="15"
-        viewBox="0 0 20 15"
-    >
-        <rect width="20" height="15" fill="#fff" />
-        <rect width="20" height="1.15" y="0" fill="#B22234" />
-        <rect width="20" height="1.15" y="2.31" fill="#B22234" />
-        <rect width="20" height="1.15" y="4.62" fill="#B22234" />
-        <rect width="20" height="1.15" y="6.92" fill="#B22234" />
-        <rect width="20" height="1.15" y="9.23" fill="#B22234" />
-        <rect width="20" height="1.15" y="11.54" fill="#B22234" />
-        <rect width="20" height="1.15" y="13.85" fill="#B22234" />
-        <rect width="8" height="8.08" fill="#3C3B6E" />
-    </svg>
-);
-
 const FlagIcon = ({ code }: { code: string }) => {
     if (code === 'pt-BR') return <BrazilFlag />;
     if (code === 'en-US') return <USAFlag />;
+
     return null;
 };
 
@@ -66,7 +31,6 @@ export function LanguageSwitcher({
         supportedLanguages,
     } = useLanguage();
 
-    // Variante minimal - apenas ícone de toggle
     if (variant === 'minimal') {
         return (
             <button
@@ -87,7 +51,6 @@ export function LanguageSwitcher({
         );
     }
 
-    // Variante select - dropdown
     if (variant === 'select') {
         return (
             <div className={`language-select-wrapper ${className}`}>
@@ -110,7 +73,6 @@ export function LanguageSwitcher({
         );
     }
 
-    // Variante button - botões lado a lado
     return (
         <div className={`language-switcher-buttons ${className}`}>
             {supportedLanguages.map((lang) => (
