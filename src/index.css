@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-/* ===== CUSTOM THEME (Tailwind v4) ===== */
 @theme {
     /* Cores principais do layout - TEMA ESCURO (padrão) */
     --color-primary: #2d2e31;
@@ -45,7 +44,6 @@
     --breakpoint-xs: 40rem;
 }
 
-/* ===== TEMA CLARO ===== */
 :root.light {
     --color-primary: #f5f5f5;
     --color-secondary: #e5e5e5;
@@ -61,7 +59,6 @@
     --shadow-dark: 1.5rem 1.5rem 3rem rgba(0, 0, 0, 0.15);
 }
 
-/* ===== KEYFRAME ANIMATIONS ===== */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -166,7 +163,6 @@
     }
 }
 
-/* ===== ANIMATED SECTION COMPONENT ===== */
 .animated-section {
     opacity: 0;
     transition-property: opacity, transform;
@@ -176,7 +172,6 @@
     will-change: opacity, transform;
 }
 
-/* Estados iniciais por tipo de animação */
 .animated-section.fade-in {
     opacity: 0;
 }
@@ -226,7 +221,6 @@
     }
 }
 
-/* ===== CUSTOM BASE STYLES ===== */
 @layer base {
     * {
         box-sizing: border-box;
@@ -278,9 +272,7 @@
     }
 }
 
-/* ===== CUSTOM COMPONENTS ===== */
 @layer components {
-    /* Container padrão */
     .container {
         margin-left: auto;
         margin-right: auto;
@@ -304,7 +296,6 @@
         }
     }
 
-    /* Botão base */
     .btn {
         display: inline-flex;
         align-items: center;
@@ -348,7 +339,6 @@
         transform: translateY(0);
     }
 
-    /* Link com hover animado */
     .link-hover {
         position: relative;
         transition: color 0.3s ease;
@@ -369,7 +359,6 @@
         width: 100%;
     }
 
-    /* Card base */
     .card {
         background-color: var(--color-primary);
         border: 1px solid var(--color-border);
@@ -386,7 +375,6 @@
         transform: translateY(-0.25rem);
     }
 
-    /* Visually hidden (acessibilidade) */
     .visually-hidden {
         position: absolute;
         width: 1px;
@@ -400,9 +388,7 @@
     }
 }
 
-/* ===== CUSTOM UTILITIES ===== */
 @layer utilities {
-    /* Blur overlay */
     .blur-overlay {
         position: fixed;
         inset: 0;
@@ -411,7 +397,6 @@
         backdrop-filter: blur(4px);
     }
 
-    /* Text gradient */
     .text-gradient {
         background: linear-gradient(
             to right,
@@ -423,7 +408,6 @@
         color: transparent;
     }
 
-    /* Animação de gear (engrenagem) */
     .gear-spin {
         transition: transform 0.5s ease;
     }
@@ -432,13 +416,11 @@
         transform: rotate(360deg);
     }
 
-    /* Texto com cor muted */
     .text-muted {
         color: var(--color-text-muted);
     }
 }
 
-/* ===== LANGUAGE SWITCHER STYLES ===== */
 @layer components {
     .language-switcher-minimal {
         display: flex;
@@ -535,9 +517,7 @@
     }
 }
 
-/* ===== THEME SWITCHER STYLES ===== */
 @layer components {
-    /* Botão de ícone simples */
     .theme-switcher-icon {
         display: flex;
         align-items: center;
@@ -557,7 +537,6 @@
         color: var(--color-accent);
     }
 
-    /* Variante compacta */
     .theme-switcher-compact {
         display: flex;
         flex-direction: column;
@@ -616,7 +595,6 @@
         height: 1rem;
     }
 
-    /* Seletor de cor de destaque */
     .accent-selector {
         display: flex;
         gap: 0.5rem;
@@ -642,7 +620,6 @@
             0 0 0 4px currentColor;
     }
 
-    /* Variante completa */
     .theme-switcher-full {
         display: flex;
         flex-direction: column;
@@ -663,9 +640,7 @@
     }
 }
 
-/* ===== SETTINGS MODAL STYLES ===== */
 @layer components {
-    /* Botão flutuante de configurações */
     .settings-fab {
         position: fixed;
         right: 1rem;
@@ -705,7 +680,6 @@
         }
     }
 
-    /* Overlay do modal */
     .settings-overlay {
         position: fixed;
         inset: 0;
@@ -715,7 +689,6 @@
         animation: fade-in 0.2s ease;
     }
 
-    /* Modal de configurações */
     .settings-modal {
         position: fixed;
         z-index: 51;
@@ -772,7 +745,6 @@
         }
     }
 
-    /* Header do modal */
     .settings-modal-header {
         display: flex;
         align-items: center;
@@ -807,13 +779,11 @@
         color: var(--color-text);
     }
 
-    /* Conteúdo do modal */
     .settings-modal-content {
         padding: 1.25rem;
     }
 }
 
-/* ===== LAYOUT COMPONENTS ===== */
 @layer components {
     /* Header */
     .header {
@@ -830,12 +800,10 @@
             border-color 0.3s ease;
     }
 
-    /* Espaçador para compensar header fixo */
     .header-spacer {
         height: 4rem; /* h-16 = 64px = 4rem */
     }
 
-    /* Section */
     .section {
         transition: background-color 0.3s ease;
     }
@@ -849,7 +817,6 @@
         color: white;
     }
 
-    /* Footer */
     .footer {
         border-top: 1px solid var(--color-border);
         padding-top: 2.5rem;
@@ -878,7 +845,8 @@
         }
     }
 
-    .footer-brand {
+    .footer-    /* Formulário */
+brand {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
@@ -1010,9 +978,7 @@
     }
 }
 
-/* ===== SECTION STYLES ===== */
 @layer components {
-    /* Section header comum */
     .section-header {
         text-align: center;
         margin-bottom: 3rem;
@@ -1037,7 +1003,6 @@
         margin-right: auto;
     }
 
-    /* Botão secundário */
     .btn-secondary {
         display: inline-flex;
         align-items: center;
@@ -1059,7 +1024,6 @@
     }
 }
 
-/* ===== HERO SECTION ===== */
 @layer components {
     .hero-content {
         display: flex;
@@ -1137,7 +1101,6 @@
     }
 }
 
-/* ===== ABOUT SECTION ===== */
 @layer components {
     .about-content {
         display: grid;
@@ -1177,7 +1140,6 @@
         margin-bottom: 0;
     }
 
-    /* Tech Grid */
     .about-tech-title {
         font-size: 1.5rem;
         font-weight: 600;
@@ -1252,7 +1214,6 @@
     }
 }
 
-/* ===== CAREER TIMELINE SECTION ===== */
 @layer components {
     .career-timeline {
         position: relative;
@@ -1270,7 +1231,6 @@
         padding-bottom: 0;
     }
 
-    /* Marcador */
     .timeline-marker {
         display: flex;
         flex-direction: column;
@@ -1303,7 +1263,6 @@
         background-color: transparent !important;
     }
 
-    /* Pulso animado para item atual */
     .timeline-pulse {
         position: absolute;
         inset: -4px;
@@ -1325,7 +1284,6 @@
         }
     }
 
-    /* Linha conectora */
     .timeline-line {
         width: 2px;
         flex-grow: 1;
@@ -1352,7 +1310,6 @@
         border-style: dashed;
     }
 
-    /* Conteúdo */
     .timeline-content {
         flex-grow: 1;
         padding: 1rem 1.25rem;
@@ -1393,7 +1350,6 @@
         line-height: 1.6;
     }
 
-    /* Responsividade */
     @media (max-width: 640px) {
         .timeline-item {
             gap: 1rem;
@@ -1413,7 +1369,6 @@
     }
 }
 
-/* ===== PROJECTS SECTION ===== */
 @layer components {
     .projects-grid {
         display: grid;
@@ -1519,7 +1474,6 @@
     }
 }
 
-/* ===== SERVICES SECTION ===== */
 @layer components {
     .services-grid {
         display: grid;
@@ -1566,7 +1520,6 @@
     }
 }
 
-/* ===== CONTACT SECTION ===== */
 @layer components {
     .contact-content {
         display: grid;
@@ -1642,7 +1595,6 @@
         gap: 0.75rem;
     }
 
-    /* Formulário */
     .contact-form {
         display: flex;
         flex-direction: column;
@@ -1696,7 +1648,6 @@
     }
 }
 
-/* ===== NAVIGATION ACTIVE STATES ===== */
 @layer components {
     .nav-link {
         position: relative;
@@ -1733,7 +1684,6 @@
     }
 }
 
-/* ===== SKELETON LOADING ===== */
 @layer components {
     .skeleton-pulse {
         background: linear-gradient(
@@ -1761,9 +1711,7 @@
     }
 }
 
-/* ===== PROJECTS ENHANCEMENTS ===== */
 @layer components {
-    /* Header do projeto com estrelas */
     .project-header {
         display: flex;
         justify-content: space-between;
@@ -1781,7 +1729,6 @@
         flex-shrink: 0;
     }
 
-    /* Linguagem no placeholder */
     .project-language {
         position: absolute;
         bottom: 0.5rem;
@@ -1799,13 +1746,11 @@
         gap: 0.5rem;
     }
 
-    /* Badge de tecnologias extras */
     .tech-badge-more {
         background-color: var(--color-accent);
         color: white;
     }
 
-    /* Container de erro */
     .projects-error-container {
         grid-column: 1 / -1;
     }
@@ -1832,7 +1777,6 @@
         color: var(--color-text-muted);
     }
 
-    /* Estado vazio */
     .projects-empty {
         grid-column: 1 / -1;
         text-align: center;
@@ -1840,7 +1784,6 @@
     }
 }
 
-/* ===== DOWNLOAD BUTTON ===== */
 @layer components {
     .btn-download {
         position: relative;
@@ -1867,14 +1810,12 @@
     }
 }
 
-/* ===== MOBILE MENU ===== */
 @layer components {
     .mobile-menu-container {
         display: flex;
         align-items: center;
     }
 
-    /* Botão Hamburger */
     .mobile-menu-toggle {
         display: flex;
         align-items: center;
@@ -1906,7 +1847,6 @@
         transform-origin: center;
     }
 
-    /* Estado aberto do hamburger */
     .hamburger-icon.is-open .hamburger-line:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -1920,7 +1860,6 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Overlay */
     .mobile-menu-overlay {
         position: fixed;
         top: 0;
@@ -2002,9 +1941,7 @@
     }
 }
 
-/* ===== FORM FEEDBACK ===== */
 @layer components {
-    /* Erro de validação */
     .form-error {
         font-size: 0.8125rem;
         color: #ef4444;
@@ -2019,7 +1956,6 @@
         box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
     }
 
-    /* Mensagem de sucesso */
     .form-success {
         display: flex;
         align-items: center;
@@ -2032,7 +1968,6 @@
         margin-bottom: 1rem;
     }
 
-    /* Mensagem de erro do servidor */
     .form-error-message {
         display: flex;
         align-items: center;
@@ -2045,7 +1980,6 @@
         margin-bottom: 1rem;
     }
 
-    /* Botão desabilitado */
     .btn-primary:disabled {
         opacity: 0.6;
         cursor: not-allowed;
@@ -2057,7 +1991,6 @@
         box-shadow: none;
     }
 
-    /* Spinner de loading */
     .animate-spin {
         animation: spin 1s linear infinite;
     }

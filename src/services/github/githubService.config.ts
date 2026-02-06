@@ -27,7 +27,7 @@ export interface CacheData {
 }
 
 export const GITHUB_CONFIG = {
-    username: 'Ruan-Moraes',
+    username: import.meta.env.VITE_GITHUB_USERNAME,
     apiUrl: 'https://api.github.com',
     cacheKey: 'github-repos-cache',
     cacheDuration: 1000 * 60 * 30, // 30 minutos

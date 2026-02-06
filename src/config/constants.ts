@@ -1,15 +1,14 @@
 import type { ContactInfo, AccentColor } from '../types';
 
 export const CONTACT_CONFIG: ContactInfo = {
-    email: 'ruanmoraessantosbarbosa@gmail.com',
-    phone: '+55 (31) 99311-2958',
-    phoneLink: '+5531993112958',
-    location: 'Belo Horizonte - MG - Brasil',
+    email: import.meta.env.VITE_CONTACT_EMAIL,
+    phone: import.meta.env.VITE_CONTACT_PHONE,
+    phoneLink: import.meta.env.VITE_CONTACT_PHONE_LINK,
+    location: import.meta.env.VITE_CONTACT_LOCATION,
     social: {
-        github: 'https://github.com/Ruan-Moraes',
-        linkedin: 'https://www.linkedin.com/in/ruan-dev/',
-        whatsapp:
-            'https://api.whatsapp.com/send/?phone=5531993112958&text&type=phone_number&app_absent=0',
+        github: import.meta.env.VITE_SOCIAL_GITHUB,
+        linkedin: import.meta.env.VITE_SOCIAL_LINKEDIN,
+        whatsapp: import.meta.env.VITE_SOCIAL_WHATSAPP,
     },
 } as const;
 

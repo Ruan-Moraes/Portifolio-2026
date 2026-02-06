@@ -1,5 +1,5 @@
 export const CONTACT_FORM_CONFIG = {
-    formspreeEndpoint: 'https://formspree.io/f/YOUR_FORM_ID',
+    formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT,
     minSubmitTime: 1000,
     maxMessageLength: 5000,
     emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
