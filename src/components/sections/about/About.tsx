@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Section } from '../../layout';
 import { AnimatedSection } from '../../ui';
 
-import { techCategories } from './About.config.ts';
+import { techCategories, extraTechnologies } from './About.config.ts';
 
 interface AboutProps {
     className?: string;
@@ -96,6 +96,20 @@ export function About({ className = '' }: AboutProps) {
                         </AnimatedSection>
                     ))}
                 </div>
+                <AnimatedSection
+                    animation="fade-up"
+                    delay={800}
+                    className="extra-tech-section"
+                >
+                    <h4 className="extra-tech-title">{t('about.tech.other')}</h4>
+                    <div className="extra-tech-list">
+                        {extraTechnologies.map((tech) => (
+                            <span key={tech} className="extra-tech-badge">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                </AnimatedSection>
             </AnimatedSection>
         </Section>
     );

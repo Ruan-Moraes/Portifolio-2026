@@ -66,16 +66,22 @@
         "journey": {
             "title": "My Journey",
             "paragraph1": "My journey with technology started early, at age 8, with the curiosity to understand how computers worked. At 12, I had my first contact with programming through Python. Influenced by friends, I also became interested in hardware, which naturally led me to deepen my interest in the world of technology even further.",
-            "paragraph2": "After building my own computer and diving deep into hardware, I decided to pursue a career in development. Today, I work as a Trainee Developer at CAPYS, where I apply my knowledge in Java, Spring Boot, React, and databases to deliver quality solutions."
+            "paragraph2": "After building my own computer and diving deep into hardware, I decided to pursue a career in development. Today, I work as a Trainee Developer at CAPYS, where I apply my knowledge in C#, .NET, React, React Native, SQL Server, and databases to deliver quality solutions."
         },
         "tech": {
             "title": "Technologies & Skills",
             "languages": "Languages",
             "backend": "Backend",
             "frontend": "Frontend",
+            "mobile": "Mobile",
             "databases": "Databases",
+            "messaging": "Messaging",
+            "architecture": "Architecture",
             "devops": "DevOps & Tools",
-            "architecture": "Architecture"
+            "testing": "Testing",
+            "design": "Design & IDEs",
+            "os": "Operating Systems",
+            "other": "Other"
         }
     },
     "career": {

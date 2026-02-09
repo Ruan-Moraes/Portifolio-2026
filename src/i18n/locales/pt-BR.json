@@ -66,16 +66,22 @@
         "journey": {
             "title": "Minha Trajetória",
             "paragraph1": "Minha jornada com a tecnologia começou cedo, aos 8 anos, com a curiosidade de entender como os computadores funcionavam. Aos 12 anos, tive meu primeiro contato com programação por meio de Python. Influenciado por amigos, passei a me interessar também por hardware, o que naturalmente me levou a aprofundar ainda mais o interesse pelo mundo da tecnologia.",
-            "paragraph2": "Após montar meu próprio computador e me aprofundar em hardware, decidi seguir carreira na área de desenvolvimento. Hoje, atuo como Desenvolvedor Trainee na CAPYS, onde aplico meus conhecimentos em Java, Spring Boot, React e bancos de dados para entregar soluções de qualidade."
+            "paragraph2": "Após montar meu próprio computador e me aprofundar em hardware, decidi seguir carreira na área de desenvolvimento. Hoje, atuo como Desenvolvedor Trainee na CAPYS, onde aplico meus conhecimentos em C#, .NET, React, React Native, SQL Server e bancos de dados para entregar soluções de qualidade."
         },
         "tech": {
             "title": "Tecnologias & Competências",
             "languages": "Linguagens",
             "backend": "Backend",
             "frontend": "Frontend",
+            "mobile": "Mobile",
             "databases": "Bancos de Dados",
+            "messaging": "Mensageria",
+            "architecture": "Arquitetura",
             "devops": "DevOps & Ferramentas",
-            "architecture": "Arquitetura"
+            "testing": "Testes",
+            "design": "Design & IDEs",
+            "os": "Sistemas Operacionais",
+            "other": "Outros"
         }
     },
     "career": {

@@ -110,7 +110,7 @@ export function Hero({ className = '' }: HeroProps) {
                     className="hero-visual"
                 >
                     <div className="hero-image-placeholder">
-                        <span className="text-4xl">👨‍💻</span>
+                        <img src="/photo/photo.jpg" alt="Minha Foto (Ruan Moraes)" />
                     </div>
                 </AnimatedSection>
             </div>
