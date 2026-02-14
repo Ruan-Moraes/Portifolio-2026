@@ -173,7 +173,7 @@
         "title": "Contato",
         "titlePrefix": "Entre em",
         "titleHighlight": "Contato",
-        "subtitle": "Vamos conversar sobre seu próximo projeto",
+        "subtitle": "Fale comigo para discutir projetos, oportunidades ou apenas dizer oi!",
         "email": "E-mail",
         "phone": "Telefone",
         "location": "Localização",
@@ -186,7 +186,7 @@
             "email": "E-mail",
             "emailPlaceholder": "seu@email.com",
             "message": "Mensagem",
-            "messagePlaceholder": "Descreva seu projeto ou deixe sua mensagem...",
+            "messagePlaceholder": "Escreva sua mensagem...",
             "sending": "Enviando...",
             "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
             "error": "Erro ao enviar mensagem. Tente novamente."
@@ -195,7 +195,7 @@
     "footer": {
         "navigation": "Navegação",
         "connectWithMe": "Conecte-se",
-        "description": "Desenvolvedor apaixonado por criar experiências digitais excepcionais. Transformando ideias em código limpo e eficiente.",
+        "description": "Transformando ideias em código limpo e eficiente.",
         "rights": "Todos os direitos reservados.",
         "madeWith": "Feito com",
         "using": "usando"

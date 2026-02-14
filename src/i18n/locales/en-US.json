@@ -173,7 +173,7 @@
         "title": "Contact",
         "titlePrefix": "Get in",
         "titleHighlight": "Touch",
-        "subtitle": "Let's talk about your next project",
+        "subtitle": "Feel free to reach out for collaborations, projects or just to say hi!",
         "email": "Email",
         "phone": "Phone",
         "location": "Location",
@@ -186,7 +186,7 @@
             "email": "Email",
             "emailPlaceholder": "your@email.com",
             "message": "Message",
-            "messagePlaceholder": "Describe your project or leave your message...",
+            "messagePlaceholder": "Leave your message...",
             "sending": "Sending...",
             "success": "Message sent successfully! I'll get back to you soon.",
             "error": "Failed to send message. Please try again."
@@ -195,7 +195,7 @@
     "footer": {
         "navigation": "Navigation",
         "connectWithMe": "Connect",
-        "description": "Developer passionate about creating exceptional digital experiences. Transforming ideas into clean and efficient code.",
+        "description": "Transforming ideas into clean and efficient code.",
         "rights": "All rights reserved.",
         "madeWith": "Made with",
         "using": "using"

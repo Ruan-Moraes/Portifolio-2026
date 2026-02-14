@@ -1,4 +1,5 @@
 import { EmailIcon, GitHubIcon, LinkedInIcon } from '../../icons/Icons.tsx';
+import { CONTACT_CONFIG } from '../../../config';
 
 export interface FooterLink {
     href: string;
@@ -21,17 +22,17 @@ export const defaultNavLinks: FooterLink[] = [
 
 export const defaultSocialLinks: SocialLink[] = [
     {
-        href: 'https://github.com/Ruan-Moraes',
+        href: CONTACT_CONFIG.social.github,
         label: 'GitHub',
         icon: GitHubIcon(),
     },
     {
-        href: 'https://www.linkedin.com/in/ruan-dev/',
+        href: CONTACT_CONFIG.social.linkedin,
         label: 'LinkedIn',
         icon: LinkedInIcon(),
     },
     {
-        href: 'mailto:ruanmoraessantosbarbosa@gmail.com',
+        href: `mailto:${CONTACT_CONFIG.email}`,
         label: 'Email',
         icon: EmailIcon(),
     },
