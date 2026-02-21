@@ -10,11 +10,11 @@ export const techCategories: TechCategory[] = [
     },
     {
         titleKey: 'about.tech.backend',
-        items: ['Spring Boot', '.NET Core', 'Node.js', 'Entity Framework'],
+        items: ['Spring Boot', '.NET Core', 'Node.js', 'Entity Framework Core'],
     },
     {
         titleKey: 'about.tech.frontend',
-        items: ['React', 'Tailwind CSS', 'Sass', 'Bootstrap'],
+        items: ['React', 'Tailwind CSS', 'Sass', 'Bootstrap', 'I18n'],
     },
     {
         titleKey: 'about.tech.databases',
@@ -29,6 +29,7 @@ export const techCategories: TechCategory[] = [
         items: [
             'Clean Architecture',
             'Arquitetura Hexagonal',
+            'Feature-Based Architecture (frontend)',
             'Design Patterns',
             'MVC',
         ],
@@ -53,7 +54,24 @@ export const extraTechnologies: string[] = [
     'JUnit',
     'Figma',
     'IntelliJ IDEA',
+    'Rider',
+    'WebStorm',
+    'DataGrip',
+    'Visual Studio Code',
     'SOLID',
     'Clean Code',
     'Big O Notation',
+    'Keycloak',
+    'AMQP',
+    'Flutter (Básico)',
+    'AI-First',
+    'Claude',
+    'ChatGPT',
+    'Gemini',
+    'Midjourney',
+    'Configurações de MCPs',
+    'Lmstudio',
+    'Ollama',
+    'Montagem e manutenção (básico) de Computadores',
+    'Pacote Office (Básico)'
 ];
